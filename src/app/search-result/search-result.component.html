@@ -1,0 +1,20 @@
+<table class="table table-light table-stripped">
+    <thead>
+     <tr>
+         <th>City</th><th>Location</th><th>Name</th>  <th>Description</th> <th>ID</th>  <th>Action</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr *ngFor="let h of hotel;let i=index">
+        
+         <td>{{h.city}}</td>
+         <td>{{h.hotelAddress}}</td>
+         <td>{{h.hotelName}}</td>
+         <td>{{h.hotelDescription}}</td>
+         <td>{{h.hotelId}}</td>
+         
+         <button class="btn btn-primary" (click)="viewDetails(i)">View</button>
+
+     </tr>
+    </tbody>
+ </table>

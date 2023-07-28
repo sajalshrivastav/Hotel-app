@@ -1,0 +1,67 @@
+{
+  "hotel": [
+    {
+      "hotelId": 1,
+      "hotelName": "Holiday Inn",
+      "hotelAddress": "Civil Lines",
+      "hotelDescription": "Description for hotelId 1",
+      "city": "Pune",
+      "img": ""
+    },
+    {
+      "hotelId": 2,
+      "hotelName": "Alchemy Suites",
+      "hotelDescription": "Description for hotelId 2",
+      "hotelAddress": "Koramangala",
+      "city": "Bangalore",
+      "img": ""
+    }
+  ],
+  "customer": [
+    {
+      "customerId": 101,
+      "customerName": "Kajal",
+      "mobile": 9748736258,
+      "email": "kajal@gmail.com",
+      "password": "kajal123",
+      "bookings": [
+        {
+          "bookingId": 201,
+          "hotelId": 1,
+          "guest": 1,
+          "roomType": "Suite",
+          "checkIn": "02/07/2023",
+          "checkOut": "12/07/2023",
+          "price": 10000
+        }
+      ]
+    },
+    {
+      "customerId": 102,
+      "customerName": "Gaurav",
+      "mobile": 9848736254,
+      "email": "gaurav@gmail.com",
+      "password": "gaurav123",
+      "bookings": [
+        {
+          "bookingId": 202,
+          "hotelId": 2,
+          "guest": 1,
+          "roomType": "Delux",
+          "checkIn": "02/07/2023",
+          "checkOut": "12/07/2023",
+          "price": 13000
+        },
+        {
+          "bookingId": 203,
+          "hotelId": 1,
+          "guest": 2,
+          "roomType": "Delux",
+          "checkIn": "02/07/2023",
+          "checkOut": "12/07/2023",
+          "price": 12000
+        }
+      ]
+    }
+  ]
+}

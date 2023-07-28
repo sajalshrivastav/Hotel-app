@@ -1,0 +1,22 @@
+<form (ngSubmit)="authenticate()" class="was-validated">
+
+    <fieldset>
+  
+    <legend>Login/Signup</legend>
+  
+    <label >Email</label>
+  
+    <input type="text" name="email" [(ngModel)]="cred.email" class="form-control"><br>
+  
+
+    <label >password</label>
+  
+    <input type="password" name="password" [(ngModel)]="cred.password" class="form-control"/><br>
+  
+    </fieldset>
+  
+  
+    <button class="btn btn-primary">Login</button>
+  
+  </form>
+  <a [routerLink]="['/register-page']">Register</a>

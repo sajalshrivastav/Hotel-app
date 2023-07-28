@@ -1,0 +1,37 @@
+<form (ngSubmit)="save()" class="was-validated" #addf=ngForm>
+
+    <label>Name</label>
+
+    <input name="CheckIn" class="form-control" [(ngModel)]="customer.customerName" >
+
+
+
+    <label>Mobile</label>
+
+    <input name="CheckOut" class="form-control" [(ngModel)]="customer.mobile" required >
+
+
+
+
+
+    <label>Email</label>
+
+    <input class="form-control" name="guest" [(ngModel)]="customer.email" type="text" >
+
+    <br>
+
+   
+
+    <label>Password</label>
+
+    <input class="form-control" name="guest" [(ngModel)]="customer.password" type="number" >
+
+    <br>
+
+
+
+    <button type="submit" class="btn btn-primary" [disabled]="!addf.valid">Save </button>
+
+</form>
+
+<a [routerLink]="['/login-page']">Login</a>

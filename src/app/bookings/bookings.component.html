@@ -1,0 +1,32 @@
+
+
+
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            
+            <th>Booking Id</th><th>Check In</th><th>Check Out</th> <th>Room type</th> <th>No of Guest</th> <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let b of custBookings;">
+            <!-- <td>{{b}}</td> -->
+            <!-- <td>{{b.hotelId}}</td> -->
+            <td>{{b.bookingId}}</td>
+            <td>{{b.checkIn}}</td>
+            <td>{{b.checkOut}}</td>
+            <td>{{b.roomType}}</td>
+            <td>{{b.guest}}</td>
+            <td>{{b.price}}</td>
+            
+            
+             
+            
+        </tr>
+        
+    </tbody>
+    
+    
+    
+</table>
+

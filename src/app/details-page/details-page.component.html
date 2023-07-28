@@ -1,0 +1,52 @@
+
+<h1>Details Page</h1>
+<table class="table table-dark table-striped">
+
+  <thead>
+
+      <tr>
+
+      <th>city</th><th>ID</th><th>Location</th><th>Name</th><th>Description</th>
+
+  </tr>
+
+  </thead>
+
+ 
+
+  <tbody>
+
+      <tr>
+
+          <td>{{hotel.city}}</td>
+
+          <td>{{hotel.hotelId}}</td>
+
+          <td>{{hotel.hotelAddress}}</td>
+
+          <td>{{hotel.hotelName}}</td>
+
+          <td>{{hotel.hotelDescription}}</td>
+
+ 
+
+      </tr>
+
+  </tbody>
+
+ 
+
+</table>
+
+
+
+<form (ngSubmit)="book()" >
+  <label for="">Checkin</label> <br>
+  <input type="text" name="" id="" [(ngModel)]="hotelBooking.bookings[0].checkIn" >
+  <label for="">CheckOut</label> <br>
+  <input type="text" [(ngModel)]="hotelBooking.bookings[0].checkOut">
+  <label for="">Guest</label>
+  <input type="number" name="" id="" [(ngModel)]="hotelBooking.bookings[0].guest">
+
+  <button (click)="add()"> Book Now </button>
+</form>
