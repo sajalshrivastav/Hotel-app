@@ -1,0 +1,47 @@
+.search-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .search-result {
+    width: 900px; /* Increase the width of the box to make it bigger */
+    padding: 20px;
+    margin-left: 14.5%; /* Add more margin for spacing between boxes */
+    margin-top: 60px;
+    margin-right: 14.5%;
+    border-radius: 8px;
+    box-shadow: 0 4px 18px 0px rgba(0, 0, 0, 0.1); /* Increase the box shadow for a subtle effect */
+    cursor: pointer;
+    background-color: #ffffff; /* Set a background color for the search result box */
+  }
+  
+  .name {
+    font-size: 24px; /* Increase the font size for the hotel name */
+    font-weight: bold;
+  }
+  
+  .address,
+  .description,
+  .optional {
+    font-size: 16px; /* Increase the font size for other details */
+    margin: 5px 0;
+  }
+  
+  .btn-primary {
+    font-size: 16px; /* Increase the font size for the button text */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px; /* Adjust the padding for the button */
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn-primary:focus {
+    outline: none;
+  }

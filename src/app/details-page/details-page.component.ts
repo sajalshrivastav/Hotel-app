@@ -81,7 +81,7 @@ calculateTotalPrice(): number {
   // Calculate the total price based on guest count, room type, etc.
   // Apply any discounts or offers if applicable.
   // Example:
-  totalPrice = this.hotelBooking.bookings[0].price * 100; // Assuming 100 USD per guest per night.
+  totalPrice = this.hotelBooking.bookings[0].price  * 100; // Assuming 100 USD per guest per night.
   return totalPrice;
 }
 }

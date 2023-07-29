@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Hotels } from '../hotels.model';
 import { HotelsService } from '../services/hotels.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-search-result',
@@ -10,11 +11,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class SearchResultComponent {
   hotel : Hotels[]=[];
+  images:any[]=[];
   
-  constructor(private route: ActivatedRoute,private router: Router) {}
+  constructor(private route: ActivatedRoute,private router: Router, private http : HttpClient) {}
 
   ngOnInit() {
-
+this.http.get('../../hotel.json').subscribe((data:any)=>{
+  this.images=data.images;
+})
     const state = window.history.state;
     if (state && state.hotel) {
       this.hotel = state.hotel;

@@ -1,0 +1,76 @@
+/* Custom styles for the hotel details section */
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .hotel-details {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    /* Center the section within its parent container */
+    margin: 0 auto;
+    max-width: 800px; /* Add a maximum width to limit the section's width */
+  }
+  
+  .hotel-details strong {
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  .hotel-details div {
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+  
+  /* Custom styles for the "Make a Booking" section */
+  h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .booking-form {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Center the section within its parent container */
+    margin: 0 auto;
+    max-width: 800px; /* Add a maximum width to limit the section's width */
+  }
+  
+  .booking-form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .booking-form select,
+  .booking-form input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .booking-form button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .booking-form button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  .booking-form button[type="submit"]:focus {
+    outline: none;
+  }
+  

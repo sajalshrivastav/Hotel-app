@@ -1,15 +1,16 @@
-<table class="table table-light table-stripped">
-    
-    <tbody>
-     <tr *ngFor="let h of hotel;let i=index">
-        
-         <td class="name">{{h.hotelName}}</td>
-         <td class="address">{{h.hotelAddress}},{{h.city}}</td>
-         <td class="description">{{h.hotelDescription}}</td>
-         <td class="optional">{{h.hotelId}}</td>
-         
-         <button class="btn btn-primary" (click)="viewDetails(i)">View</button>
 
-     </tr>
-    </tbody>
- </table>
+<div class="search-result">
+    Search Result Based on City
+
+</div>
+<div class="search-results">
+    <div class="search-result" *ngFor="let h of hotel; let i = index" (click)="viewDetails(i)">
+        
+           
+      <h3 class="name">{{ h.hotelName }}</h3>
+      <p class="address">{{ h.hotelAddress }}, {{ h.city }}</p>
+      <p class="description">{{ h.hotelDescription }}</p>
+      <p class="optional">{{ h.hotelId }}</p>
+      <button class="btn btn-primary">View</button>
+    </div>
+  </div>
