@@ -1,52 +1,61 @@
+<h1>Hotel Details</h1>
 
-<h1>Details Page</h1>
-<table class="table table-dark table-striped">
-
-  <thead>
-
-      <tr>
-
-      <th>city</th><th>ID</th><th>Location</th><th>Name</th><th>Description</th>
-
-  </tr>
-
-  </thead>
-
- 
-
-  <tbody>
-
-      <tr>
-
-          <td>{{hotel.city}}</td>
-
-          <td>{{hotel.hotelId}}</td>
-
-          <td>{{hotel.hotelAddress}}</td>
-
-          <td>{{hotel.hotelName}}</td>
-
-          <td>{{hotel.hotelDescription}}</td>
-
- 
-
-      </tr>
-
-  </tbody>
-
- 
-
-</table>
+<div>
+  <strong>City:</strong> {{ hotel.city }}
+</div>
+<div>
+  <strong>ID:</strong> {{ hotel.hotelId }}
+</div>
+<div>
+  <strong>Location:</strong> {{ hotel.hotelAddress }}
+</div>
+<div>
+  <strong>Name:</strong> {{ hotel.hotelName }}
+</div>
+<div>
+  <strong>Description:</strong> {{ hotel.hotelDescription }}
+</div>
 
 
+<h2>Make a Booking</h2>
 
-<form (ngSubmit)="book()" >
-  <label for="">Checkin</label> <br>
-  <input type="text" name="" id="" [(ngModel)]="hotelBooking.bookings[0].checkIn" >
-  <label for="">CheckOut</label> <br>
-  <input type="text" [(ngModel)]="hotelBooking.bookings[0].checkOut">
-  <label for="">Guest</label>
-  <input type="number" name="" id="" [(ngModel)]="hotelBooking.bookings[0].guest">
+<form (ngSubmit)="book()" #bookingForm="ngForm">
+  <div>
+    <!-- Existing check-in, check-out, and guest fields -->
+  </div>
 
-  <button (click)="add()"> Book Now </button>
+  <!-- Additional fields -->
+  <div>
+    <label for="selectedOffer">Select Offer:</label>
+    <select id="selectedOffer" name="selectedOffer" [(ngModel)]="selectedOffer">
+      <option value="">10% discount</option>
+      <!-- Add options for available offers here -->
+    </select>
+  </div>
+
+  <!-- Display total price based on selected offer -->
+  <div>
+    <strong>Total Price:</strong> {{ calculateTotalPrice() | currency: 'INR':'symbol' }}
+  </div>
+
+  <!-- Additional fields for card details -->
+  <div>
+    <label for="cardNumber">Card Number:</label>
+    <input type="text" id="cardNumber" name="cardNumber" [(ngModel)]="cardDetails.cardNumber" required>
+  </div>
+  <div>
+    <label for="cardExpiry">Card Expiry:</label>
+    <input type="text" id="cardExpiry" name="cardExpiry" [(ngModel)]="cardDetails.cardExpiry" required>
+  </div>
+  <div>
+    <label for="cardCVV">Card CVV:</label>
+    <input type="text" id="cardCVV" name="cardCVV" [(ngModel)]="cardDetails.cardCVV" required>
+  </div>
+
+  <button type="submit">Confirm Booking</button>
 </form>
+
+
+
+
+
