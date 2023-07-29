@@ -20,9 +20,10 @@ localStorage.clear();
 authenticate(){
   this.service.validate(this.cred).then(resp=> resp.subscribe((data)=> 
   {
+    localStorage.setItem("Name", this.cred.customerName);
+    console.log( this.cred.customerName);
 
     this.fetched= data[0];
-    localStorage.setItem("Name", this.cred.customerName);
     console.log(typeof(this.fetched));
     if(this.cred.email== this.fetched.email){
       console.log("Login successfull");

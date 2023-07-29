@@ -24,7 +24,7 @@ export class DetailsPageComponent {
   hotel :Hotels = new Hotels();
   hotelBooking : Customer = new Customer();
 booking: Bookings[]=[];
-
+logggedInUser: Customer= new Customer();
 
 selectedOffer: string = '';
 cardDetails: any = {};
@@ -46,6 +46,8 @@ cardDetails: any = {};
 ngOnInit(){
   this.hotelBooking.bookings.push(new Bookings());
   this.hotelBooking.bookings[0].bookingId = this.hotel.hotelId;
+
+  console.log(this.hotelBooking);
 }
 
 
@@ -59,30 +61,26 @@ ngOnInit(){
 
  
  book(): void {
-  // Calculate the total price based on the selected offer and booking details.
+  
   const totalPrice = this.calculateTotalPrice();
 
-  // Save the booking details to the customer object.
   this.hotelBooking.bookings[0].price = totalPrice;
-
-  // Save the customer and booking details using the service.
   this.service.customerRegister(this.hotelBooking);
+  this.router.navigate(['/bookings']);
 
-  // Assuming confirmation page URL is '/confirmation', redirect after successful booking.
-  this.router.navigate(['/confirmation']);
+  this.hotelBooking.customerId = this.logggedInUser.customerId;
+    this.hotelBooking.customerName = this.logggedInUser.customerName;
+    this.hotelBooking.mobile = this.logggedInUser.mobile;
+    this.hotelBooking.email = this.logggedInUser.email;
 }
 
 calculateTotalPrice(): number {
-  // Implement logic to calculate the total price based on booking details and selected offer.
-  // You can access the booking details using this.hotelBooking and the selected offer using this.selectedOffer.
-  // Return the calculated total price.
-  // For example:
   let totalPrice = 0;
-  // Calculate the total price based on guest count, room type, etc.
-  // Apply any discounts or offers if applicable.
-  // Example:
-  totalPrice = this.hotelBooking.bookings[0].price  * 100; // Assuming 100 USD per guest per night.
+ 
+  totalPrice = this.hotelBooking.bookings[0].price  * 100; 
   return totalPrice;
 }
+isUserLoggedIn:boolean=true;
+
 }
 

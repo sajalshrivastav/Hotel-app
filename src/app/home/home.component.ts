@@ -14,9 +14,12 @@ export class HomeComponent {
   hotel : Hotels[]=[];
   cities: string[]=["Pune","Bangalore"];
   city: string="";
+  custName:string="";
   dropdownState: 'closed' | 'open' = 'closed';
 
-  constructor(private service: HotelsService, private router: Router) {}
+  constructor(private service: HotelsService, private router: Router) {
+    this.custName= localStorage.getItem("Name")|| "";
+  }
   search() {
     this.service.searchByCity(this.city).subscribe(data => {
       this.hotel = data;

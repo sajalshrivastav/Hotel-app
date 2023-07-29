@@ -1,22 +1,32 @@
-<form (ngSubmit)="authenticate()" class="was-validated">
+<div class="booking-image"></div>
 
-    <fieldset>
-  
-    <legend>Login/Signup</legend>
-  
-    <label >Email</label>
-  
-    <input type="text" name="email" [(ngModel)]="cred.email" class="form-control"><br>
-  
+<div class="login-overlay">
+  <div class="login-form">
+    <form (ngSubmit)="authenticate()" class="was-validated">
 
-    <label >password</label>
-  
-    <input type="password" name="password" [(ngModel)]="cred.password" class="form-control"/><br>
-  
-    </fieldset>
-  
-  
-    <button class="btn btn-primary">Login</button>
-  
-  </form>
-  <a [routerLink]="['/register-page']">Register</a>
+      <fieldset>
+        <legend>Login/Signup</legend>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" [(ngModel)]="cred.email" class="form-control" required>
+          <div class="invalid-feedback">
+            Please provide a valid email.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" [(ngModel)]="cred.password" class="form-control" required>
+          <div class="invalid-feedback">
+            Please enter your password.
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Login</button>
+      </fieldset>
+    </form>
+
+    <p>Don't have an account? <a [routerLink]="['/register-page']">Register</a></p>
+  </div>
+</div>

@@ -1,4 +1,7 @@
-<h1>Hotel Details</h1>
+<div *ngIf="isUserLoggedIn">
+
+  
+  <h1>Hotel Details</h1>
 
 <div>
   <strong>City:</strong> {{ hotel.city }}
@@ -23,7 +26,7 @@
   <div>
     <!-- Existing check-in, check-out, and guest fields -->
   </div>
-
+  
   <!-- Additional fields -->
   <div>
     <label for="selectedOffer">Select Offer:</label>
@@ -32,12 +35,12 @@
       <!-- Add options for available offers here -->
     </select>
   </div>
-
+  
   <!-- Display total price based on selected offer -->
   <div>
     <strong>Total Price:</strong> {{ calculateTotalPrice() | currency: 'INR':'symbol' }}
   </div>
-
+  
   <!-- Additional fields for card details -->
   <div>
     <label for="cardNumber">Card Number:</label>
@@ -51,11 +54,12 @@
     <label for="cardCVV">Card CVV:</label>
     <input type="text" id="cardCVV" name="cardCVV" [(ngModel)]="cardDetails.cardCVV" required>
   </div>
-
+  
   <button type="submit">Confirm Booking</button>
 </form>
 
 
 
 
+</div>
 
